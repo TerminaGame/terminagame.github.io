@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="{{ site.baseurl }}/style.css"/>
     {% else if page.layout == "release" %}
-        <meta property="og:title" content="{{ page.product | capitalize }} {% if page.state == 'dev' %}Dev Build {{ page.build }}{% else %}{{ page.version}}{% endif %} - Termina Releases" />
+        <meta property="og:title" content="{{ page.product | capitalize }} {% if page.state == 'dev' %}Dev Build {{ page.build }}{% else %}{{ page.version }}{% endif %} - Termina Releases" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="{{ page.url }}" />
         <meta property="og:image" content="assets/octocat.png" />
