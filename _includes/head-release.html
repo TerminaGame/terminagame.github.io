@@ -1,6 +1,6 @@
 <head>
-    <title>{{ page.title }} - Termina</title>
-    <meta property="og:title" content="Termina" />
+    <title>{{ page.product | capitalize }} {% if page.state == 'dev' %}Dev Build {{ page.build }}{% else %}{{ page.version }}{% endif %} - Termina Releases</title>
+    <meta property="og:title" content="{{ page.product | capitalize }} {% if page.state == 'dev' %}Dev Build {{ page.build }}{% else %}{{ page.version }}{% endif %} - Termina Releases" />
     <meta property="og:image" content="{{ site.baseurl }}/assets/octocat.png" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://terminagame.github.io/" />

@@ -1,7 +1,7 @@
 <head>
-    <title>{{ page.title }} - Termina</title>
-    <meta property="og:title" content="Termina" />
-    <meta property="og:image" content="{{ site.baseurl }}/assets/octocat.png" />
+    <title>{{ page.title }} - Termina Blogs</title>
+    <meta property="og:title" content="{{ page.title }} - Termina Blogs" />
+    <meta property="og:image" content="{{ site.baseurl }}/assets/{% if page.icon != nil %}{{ page.icon }}{% else %}post_default.png{% endif %}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://terminagame.github.io/" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
