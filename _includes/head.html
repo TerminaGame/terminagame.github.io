@@ -2,16 +2,19 @@
     <title>{{ page.title }} - Termina</title>
     {% if page.layout == "default" || page.layout == "page" %}
         <meta property="og:title" content="Termina" />
+        <meta property="og:image" content="{{ site.baseurl }}/assets/octocat.png" />
     {% else if page.layout == "post" %}
         <meta property="og:title" content="{{ page.title }} - Termina Blogs" />
+        <meta property="og:image" content="{{ site.baseurl }}/assets/{% if page.icon != nil %}{{ page.icon }}{% else %}post_default.png{% endif %}" />
     {% else if page.layout == "release" %}
         <meta property="og:title" content="{{ page.product | capitalize }} {% if page.state == 'dev' %}Dev Build {{ page.build }}{% else %}{{ page.version }}{% endif %} - Termina Releases" />
+        <meta property="og:image" content="{{ site.baseurl }}/assets/octocat.png" />
     {% else %}
         <meta property="og:title" content="Termina" />
+        <meta property="og:image" content="{{ site.baseurl }}/assets/octocat.png" />
     {% endif %}
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://terminagame.github.io/" />
-    <meta property="og:image" content="{{ site.baseurl }}/assets/octocat.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ site.baseurl }}/style.css"/>
