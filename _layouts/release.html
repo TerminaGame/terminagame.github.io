@@ -30,6 +30,14 @@
                 {% else %}
                     <a href = "{{ page.dl_url }}" class="btn btn-primary btn-large btn-block">Download Release</a>
                 {% endif %}
+                {% if page.product == "base" %}
+                    <p>
+                        <div class="alert alert-primary" role="alert">
+                            <h4 class = "alert-heading">Installation instructions</h4>
+                            To install this product, copy the <code>termina</code> binary to where you can execute Unix binaries (usually <code>/usr/bin/</code> or <code>/usr/local/bin/</code>). Alternatively, you can copy this to a local folder in your Home directory and <a href="http://osxdaily.com/2014/08/14/add-new-path-to-path-command-line/">export the PATH in your Bash profile</a>.
+                        </div>
+                    </p>
+                {% endif %}
             </div>
         </div>
         
