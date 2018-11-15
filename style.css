@@ -1,3 +1,12 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
 .bg-hero {
     background-color: #E64A19;
     color: white;
@@ -6,4 +15,11 @@
 .bg-nav {
     background-color: #E64A19;
     color: white;
+}
+
+.footer {
+    width: 100%;
+    min-height: 64px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
