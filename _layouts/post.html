@@ -3,13 +3,41 @@
     {% include head.html %}
     {% include navbar.html %}
 <body>
+    {% if page.cover != nil %}
+        <div class = "row post-cover" style = "background-image: url('{{ site.baseurl }}/assets/covers/{{ page.cover }}');">
+            <div class = "container">
+                <div class = "row">
+                    <div class = "col">
+                        <br><br>
+                        <h1 class = "display-4">{{ page.title }}</h1>
+                        <h2>Written by <b>{{ page.author }}</b></h2>
+                        <p>Posted on {{ page.date | date: "%-d %B %Y" }}</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class = "container post-content">
+            <div class = "row">
+                <div class = "col-sm-12 col-md-8 post">
+                    <br><br>
+                    {{ content }}
+                </div>
+            </div>
+        </div>
+    {% else %}
     <div class = "container">
-        <br><br>
-        <h1 class = "display-4">{{ page.title }}</h1>
-        <h2>Written by <b>{{ page.author }}</b></h2>
-        <p>Posted on {{ page.date | date: "%-d %B %Y" }}</p>
-        <br><br>
-        {{ content }}
+        <div class = "row">
+            <div class = "col-sm-12 col-md-8 post">
+                <br><br>
+                <h1 class = "display-4">{{ page.title }}</h1>
+                <h2>Written by <b>{{ page.author }}</b></h2>
+                <p>Posted on {{ page.date | date: "%-d %B %Y" }}</p>
+                <br><br>
+                {{ content }}
+            </div>
+        </div>
+    {% endif %}
     </div>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
