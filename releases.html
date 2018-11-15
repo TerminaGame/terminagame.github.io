@@ -39,12 +39,12 @@ layout: page
         {% if post.category == "release" %}
             {% if post.state == "dev" %}
             <div class = "row {% if post.next == nil %}alert alert-success{% endif %}">
-                <div class = "col-9">
+                <div class = "col-md-9 col-sm-12">
                     <a href="{{ post.url }}"><h2>{{ post.title }} - {{ post.build }} ({{ post.product }})</h2></a>
                     <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
                     <p>{{ post.excerpt }}</p>
                 </div>
-                <div class = "col-3">
+                <div class = "col-md-3 col-sm-12">
                     <a href = "{{ page.dl_url }}" class="btn btn-warning btn-large btn-block">Download Release</a>
                     <p>
                         <div class="alert alert-warning" role="alert">
@@ -56,12 +56,12 @@ layout: page
             <hr>
             {% else %}
             <div class = "row">
-                <div class = "col-9 {% if post.next == nil %}alert alert-success{% endif %}">
+                <div class = "col-md-9 col-sm-12{% if post.next == nil %}alert alert-success{% endif %}">
                     <a href="{{ post.url }}"><h2>{{ post.title }} - {{ post.version }} ({{ post.product }})</h2></a>
                     <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
                     <p>{{ post.excerpt }}</p>
                 </div>
-                <div class = "col-3">
+                <div class = "col-md-3 col-sm-12">
                     <a href = "{{ page.dl_url }}" class="btn btn-secondary btn-large btn-block">Download Release</a>
                 </div>
             </div>
