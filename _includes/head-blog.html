@@ -1,5 +1,6 @@
 <head>
     <title>{{ page.title }} - Termina Blogs</title>
+    {% include favicon.html %}
     <meta property="og:title" content="{{ page.title }} - Termina Blogs" />
     <meta property="og:image" content="{{ site.baseurl }}/assets/{% if page.icon != nil %}{{ page.icon }}{% else %}post_default.png{% endif %}" />
     <meta property="og:type" content="website" />

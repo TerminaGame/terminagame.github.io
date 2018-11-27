@@ -9,12 +9,20 @@ body {
 
 .bg-hero {
     background-color: #E64A19;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
 }
 
 .bg-nav {
     background-color: #E64A19;
     color: white;
+}
+
+.cmd-frame {
+    width: 100%;
+    height: 100%;
 }
 
 .footer {
