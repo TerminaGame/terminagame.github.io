@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-nav">
-  <a class="navbar-brand" href="{{ site.baseurl }}/index.html"><b>Termina</b></a>
+  <a class="navbar-brand" href="{{ site.baseurl }}/"><b>Termina</b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,10 +7,23 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link {% if page.title == 'Blog' %}active{% endif %}" href="{{ site.baseurl }}/blog.html">Blog</a>
+            <a class="nav-link {% if page.title == 'Blog' or page.category == 'post' %}active{% endif %}" href="{{ site.baseurl }}/blog/">Blog</a>
         </li>
       <li class="nav-item {% if page.title == 'Releases' %}active{% endif %}">
-        <a class="nav-link" href="{{ site.baseurl }}/releases.html">Releases</a>
+        <a class="nav-link" href="{{ site.baseurl }}/releases/">Releases</a>
       </li>
+      {% if site.enable_beta %}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle {% if page.beta %}active{% endif %}" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Beta Programs
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{{ site.baseurl }}/mac/tutoriel.html">macOS</a>
+          <a class="dropdown-item" href="{{ site.baseurl }}/ios/tutoriel.html" disabled>iOS</a>
+        </div>
+      </li>
+      {% else %}
+      <li class = "nav-item"><a class = "nav-link" disabled>Beta Programs</a></li>
+      {% endif %}
   </div>
   </nav>

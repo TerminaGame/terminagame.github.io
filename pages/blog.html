@@ -1,0 +1,55 @@
+---
+title: Blog
+layout: page
+permalink: /blog/
+---
+<div class = "container">
+    <br><br>
+    <div class = "row">
+        <div class = "col-md-10 col-sm-12">
+            <h1>Updates from the Termina Project</h1>
+        </div>
+        <div class = "col-md-2 col-sm-12">
+            <a href = "{{ site.baseurl }}/feed.xml" class = "btn btn-warning btn-block"><span>{% octicon rss class:"btn-icon" %}</span>Subscribe</a>
+        </div>
+    </div>
+    
+    <br>
+    {% for post in site.categories['post'] limit:1 %}
+        <div class = "row shadow p-4 mb-4 rounded">
+            <div class = "col-md-2 col-sm-12">
+                {% if post.icon != nil %}
+                    <img src = "{{ site.baseurl }}/assets/{{ post.icon }}" width="100%"/>
+                {% else %}
+                    <img src = "{{ site.baseurl }}/assets/post_default.png" width="100%"/>
+                {% endif %}
+            </div>
+            <div class = "col-md-10 col-sm-12">
+                <h2>Latest: {{ post.title }}</h2>
+                <p class = "h5"><b>{{ post.author }}</b> on {{ post.date | date: "%-d %B %Y" }}</p>
+                <p>{{ post.excerpt }}</p>
+                <p><a href="{{ post.url }}" class = "btn btn-info">Read more &rsaquo;</a></p>
+            </div>
+        </div>
+    {% endfor %}
+    <br>
+    {% for post in site.categories['post'] offset:1 %}
+        <div class = "row">
+            <div class = "col-md-2 col-sm-12">
+                {% if post.icon != nil %}
+                    <img src = "{{ site.baseurl }}/assets/{{ post.icon }}" width="100%"/>
+                {% else %}
+                    <img src = "{{ site.baseurl }}/assets/post_default.png" width="100%"/>
+                {% endif %}
+            </div>
+            <div class = "col-md-10 col-sm-12">
+                <h2>{{ post.title }}</h2>
+                <p class = "h5"><b>{{ post.author }}</b> on {{ post.date | date: "%-d %B %Y" }}</p>
+                <p>{{ post.excerpt }}</p>
+                <p><a href="{{ post.url }}" class = "btn btn-info">Read more &rsaquo;</a></p>
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+    <p><center class = "text-muted">Looks like you've reached the end of the blog...</center></p>
+</div>

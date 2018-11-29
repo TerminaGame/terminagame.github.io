@@ -1,0 +1,101 @@
+---
+layout: page
+beta: true
+title: Test the Mac Beta
+permalink: /mac/tutoriel.html
+---
+<div class = "toriel">
+    <style>
+        .display-4 {
+            font-weight: bold;
+        }
+        
+        .t1 {
+            margin-bottom: 64px;
+        }
+        
+        .emd {
+            margin-bottom: 64px;
+        }
+        
+        .not-emd {
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+        
+        .woot {
+            fill: white;
+            width: 2.5rem;
+            height: auto;
+        }
+    </style>
+    <br/>
+    <div class = "container">
+        <div class = "row justify-content-center">
+            <div class = "col-10 emd">
+                <center>
+                    <img src = "{{ site.baseurl }}/assets/macos_beta_promo.png" width="60%"/>
+                    <h1 class = "display-4">Termina for macOS Beta Program</h1>
+                    <p class = "h4">
+                        Help make Termina for macOS the best edition of Termina yet! When you sign up, you can test releases of Termina for macOS and give feedback to help make it better.
+                    </p>
+                    <br/>
+                    <p>
+                        {% if site.enable_beta %}
+                        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">
+                          Sign up
+                        </button>
+                        {% else %}
+                            <button type="button" class = "btn btn-primary btn-lg" disabled>Sign up</button>
+                            <p class = "text-muted">The beta program is currently unavailable.</p>
+                        {% endif %}    
+                    </p>
+                </center>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-md-6 col-sm-12 not-emd">
+                <h1> {% octicon comment-discussion class:"woot" %} Submit feedback on the fly</h1>
+                <p>
+                    Accessing the Feedback menu couldn't be simpler. Just go to <b>Help &rsaquo; Send Feedback</b> and file a bug report.
+                </p>
+            </div>
+            <div class = "col-md-6 col-sm-12 not-emd">
+                <h1> {% octicon cloud-download class:"woot" %} Get updates faster </h1>
+                <p>
+                    Thanks to Visual Studio's AppCenter, we can keep you notified about latest updates via email so always have the latest beta build.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Beta Program Notice</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class = "container">
+            <div class = "row justify-content-start">
+                <div class = "col">
+                    <h4>By continuing, you agree to the following terms below:</h4>
+                    <p>
+                        {% include beta-license.html %}
+                    </p>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a class="btn btn-primary" href="{{ site.feedback_url }}">Agree and Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>

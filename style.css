@@ -36,6 +36,26 @@ body {
     width: 75%;
 }
 
+.toriel {
+    background-color: #333;
+    color: white;
+}
+
+.octicon_big {
+    width: 2.5rem;
+    height: auto;
+}
+
+a.btn span {
+    margin-right: 8px;
+    margin-left: 8px;
+}
+    
+.btn-icon {
+    width: 0.75rem;
+    height: auto;
+    }
+
 .post-cover {
     background-size: cover;
     background-position: center;
