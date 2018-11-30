@@ -7,14 +7,39 @@
         <br><br>
         <div class = "row">
             <div class = "col-md-8 col-sm-12">
-                <h1 class = "display-4">{{ page.title }}</h1>
-                {% if page.state == "dev" %}
-                    <h2>{{ page.product | capitalize }} Version {{ page.version }}, Build <b>{{ page.build }}</b></h2>
-                {% else %}
-                    <h2>{{ page.product | capitalize }} Version <b>{{ page.version }}</b></h2>
-                {% endif %}
                 
-                <p>Released on {{ page.date | date: "%-d %B %Y" }}</p>
+                <div class = "row">
+                    <div class = "col-9">
+                        <h1 class = "display-4"><b>{{ page.title }}</b></h1>
+                        {% if page.state == "dev" %}
+                            {% if page.product == "ios" %}
+                                <h3>iOS Version {{ page.version }}, Build <b>{{ page.build }}</b></h3>
+                            {% else %}
+                            <h3>{{ page.product | capitalize }} Version {{ page.version }}, Build <b>{{ page.build }}</b></h3>
+                            {% endif %}
+                            
+                        {% else %}
+                            {% if page.product == "ios" %}
+                                <h3>iOS Version {{ page.version }}, Build <b>{{ page.build }}</b></h3>
+                            {% else %}
+                            <h3>{{ page.product | capitalize }} Version {{ page.version }}, Build <b>{{ page.build }}</b></h3>
+                            {% endif %}
+                        {% endif %}
+                        
+                        <p>Released on {{ page.date | date: "%-d %B %Y" }}</p>
+                    </div>
+                    <div class = "col-3">
+                        {% if page.product == "base" %}
+                            <img src = "{{ site.baseurl }}/assets/base.png" width="100%"/>
+                        {% else if page.product == "ios" %}
+                            <img src = "{{ site.baseurl }}/assets/termios.png" width="100%"/>
+                        {% else if page.product == "mac" %}
+                            <img src = "{{ site.baseurl }}/assets/termmac.png" width="100%"/>   
+                        {% endif %}
+                    </div>
+                </div>
+                
+                
                 <br><br>
                 <h3>Release Notes</h3>
                 {{ content }}
@@ -34,7 +59,23 @@
                     <p>
                         <div class="alert alert-primary" role="alert">
                             <h4 class = "alert-heading">Installation instructions</h4>
-                            To install this product, copy the <code>termina</code> binary to where you can execute Unix binaries (usually <code>/usr/bin/</code> or <code>/usr/local/bin/</code>). Alternatively, you can copy this to a local folder in your Home directory and <a href="http://osxdaily.com/2014/08/14/add-new-path-to-path-command-line/">export the PATH in your Bash profile</a>.
+                            <p>To install this product, copy the <code>termina</code> binary to where you can execute Unix binaries (usually <code>/usr/bin/</code> or <code>/usr/local/bin/</code>). Alternatively, you can copy this to a local folder in your Home directory and <a href="http://osxdaily.com/2014/08/14/add-new-path-to-path-command-line/">export the PATH in your Bash profile</a>.</p>
+                        </div>
+                    </p>
+                {% else if page.product == "ios" %}
+                    <p>
+                        <div class="alert alert-primary" role="alert">
+                            <h4 class = "alert-heading">Installation instructions</h4>
+                            <p>To install this product, install Termina for iOS from the App Store.</p>
+                        </div>
+                    </p>
+                {% else if page.product == "mac" %}
+                    <p>
+                        <div class="alert alert-primary" role="alert">
+                            <h4 class = "alert-heading">Installation instructions</h4>
+                            <p>To install this product, move <code>Termina.app</code> to your Applications folder. If you are installing this for yourself, you can also move this to your user's Applications folder.</p>
+                            
+                            <p>Alternatively, you can install Termina from the Mac App Store.</p>
                         </div>
                     </p>
                 {% endif %}

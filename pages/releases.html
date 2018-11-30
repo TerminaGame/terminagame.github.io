@@ -44,9 +44,22 @@ permalink: /releases/
         {% if post.state == "dev" %}
         <div class = "row shadow mb-4 p-4 rounded">
             <div class = "col-md-9 col-sm-12">
-                <a href="{{ post.url }}"><h2>Latest: {{ post.title }} - {{ post.build }} ({{ post.product }})</h2></a>
-                <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
-                <p>{{ post.excerpt }}</p>
+                <div class = "row">
+                    <div class = "col-2">
+                        {% if post.product == "base" %}
+                            <img src = "{{ site.baseurl }}/assets/base.png" width="100%"/>
+                        {% else if post.product == "ios" %}
+                            <img src = "{{ site.baseurl }}/assets/termios.png" width="100%"/>
+                        {% else if post.product == "mac" %}
+                            <img src = "{{ site.baseurl }}/assets/termmac.png" width="100%"/>   
+                        {% endif %}
+                    </div>
+                    <div class = "col-10">
+                        <a href="{{ post.url }}"><h2>Latest: {{ post.title }} - {{ post.build }} ({{ post.product }})</h2></a>
+                        <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
+                        <p>{{ post.excerpt }}</p>
+                    </div>
+                </div>
             </div>
             <div class = "col-md-3 col-sm-12">
                 <a href = "{{ page.dl_url }}" class="btn btn-warning btn-large btn-block"><span>{% octicon cloud-download class:"btn-icon" %}</span>Download</a>
@@ -61,9 +74,22 @@ permalink: /releases/
         {% else %}
         <div class = "row row shadow mb-4 p-4 rounded">
             <div class = "col-md-9 col-sm-12">
-                <a href="{{ post.url }}"><h2>{{ post.title }} - {{ post.version }} ({{ post.product }})</h2></a>
-                <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
-                <p>{{ post.excerpt }}</p>
+                <div class = "row">
+                    <div class = "col-2">
+                        {% if post.product == "base" %}
+                            <img src = "{{ site.baseurl }}/assets/base.png" width="100%"/>
+                        {% else if post.product == "ios" %}
+                            <img src = "{{ site.baseurl }}/assets/termios.png" width="100%"/>
+                        {% else if post.product == "mac" %}
+                            <img src = "{{ site.baseurl }}/assets/termmac.png" width="100%"/>   
+                        {% endif %}
+                    </div>
+                    <div class = "col-10">
+                        <a href="{{ post.url }}"><h2>Latest: {{ post.title }} - {{ post.build }} ({{ post.product }})</h2></a>
+                        <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
+                        <p>{{ post.excerpt }}</p>
+                    </div>
+                </div>
             </div>
             <div class = "col-md-3 col-sm-12">
                 <a href = "{{ page.dl_url }}" class="btn btn-secondary btn-large btn-block"><span>{% octicon cloud-download class:"btn-icon" %}</span>Download</a>
@@ -76,10 +102,23 @@ permalink: /releases/
         {% if post.state == "dev" %}
             <div class = "row">
                 <div class = "col-md-9 col-sm-12">
-                    <a href="{{ post.url }}"><h2>{{ post.title }} - {{ post.build }} ({{ post.product }})</h2></a>
-                    <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
-                    <p>{{ post.excerpt }}</p>
+                <div class = "row">
+                    <div class = "col-2">
+                        {% if post.product == "base" %}
+                            <img src = "{{ site.baseurl }}/assets/base.png" width="100%"/>
+                        {% else if post.product == "ios" %}
+                            <img src = "{{ site.baseurl }}/assets/termios.png" width="100%"/>
+                        {% else if post.product == "mac" %}
+                            <img src = "{{ site.baseurl }}/assets/termmac.png" width="100%"/>   
+                        {% endif %}
+                    </div>
+                    <div class = "col-10">
+                        <a href="{{ post.url }}"><h2>{{ post.title }} - {{ post.build }} ({{ post.product }})</h2></a>
+                        <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
+                        <p>{{ post.excerpt }}</p>
+                    </div>
                 </div>
+            </div>
                 <div class = "col-md-3 col-sm-12">
                     <a href = "{{ page.dl_url }}" class="btn btn-warning btn-large btn-block"><span>{% octicon cloud-download class:"btn-icon" %}</span>Download</a>
                     <p>
@@ -93,10 +132,23 @@ permalink: /releases/
             {% else %}
             <div class = "row">
                 <div class = "col-md-9 col-sm-12">
-                    <a href="{{ post.url }}"><h2>{{ post.title }} - {{ post.version }} ({{ post.product }})</h2></a>
-                    <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
-                    <p>{{ post.excerpt }}</p>
+                <div class = "row">
+                    <div class = "col-2">
+                        {% if post.product == "base" %}
+                            <img src = "{{ site.baseurl }}/assets/base.png" width="100%"/>
+                        {% else if post.product == "ios" %}
+                            <img src = "{{ site.baseurl }}/assets/termios.png" width="100%"/>
+                        {% else if post.product == "mac" %}
+                            <img src = "{{ site.baseurl }}/assets/termmac.png" width="100%"/>   
+                        {% endif %}
+                    </div>
+                    <div class = "col-10">
+                        <a href="{{ post.url }}"><h2>Latest: {{ post.title }} - {{ post.build }} ({{ post.product }})</h2></a>
+                        <p class = "h5">Released on {{ post.date | date: "%-d %B %Y" }}</p>
+                        <p>{{ post.excerpt }}</p>
+                    </div>
                 </div>
+            </div>
                 <div class = "col-md-3 col-sm-12">
                     <a href = "{{ page.dl_url }}" class="btn btn-secondary btn-large btn-block"><span>{% octicon cloud-download class:"btn-icon" %}</span>Download</a>
                 </div>
