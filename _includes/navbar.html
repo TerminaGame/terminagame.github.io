@@ -28,5 +28,8 @@
       {% else %}
       <li class = "nav-item"><a class = "nav-link" disabled>Beta Programs</a></li>
       {% endif %}
+      <li class="nav-item {% if page.title == 'Press Kit' %}active{% endif %}">
+            <a class="nav-link" href="{{ site.baseurl }}/press/">Press Kit</a>
+        </li>
   </div>
   </nav>
