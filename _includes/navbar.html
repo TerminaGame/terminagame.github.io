@@ -31,5 +31,15 @@
       <li class="nav-item {% if page.title == 'Press Kit' %}active{% endif %}">
             <a class="nav-link" href="{{ site.baseurl }}/press/">Press Kit</a>
         </li>
+    </ul>
+    <span>
+        {% if page.title == "Termina for macOS" %}
+            <a class = "btn btn-light" href = "https://www.github.com/TerminaGame/mac">Fork on GitHub</a>
+        {% else if page.title == "Press Kit" %}
+            <a class = "btn btn-light" href = "https://www.github.com/TerminaGame/Press">Fork on GitHub</a>
+        {% else %}
+            <a class = "btn btn-light" href = "https://www.github.com/TerminaGame/">View on GitHub</a>
+        {% endif %}
+    </span>
   </div>
   </nav>
