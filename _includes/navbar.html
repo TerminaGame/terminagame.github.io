@@ -33,12 +33,12 @@
         </li>
     </ul>
     <span>
-        {% if page.title == "Termina for macOS" %}
-            <a class = "btn btn-light" href = "https://www.github.com/TerminaGame/mac">Fork on GitHub</a>
-        {% else if page.title == "Press Kit" %}
-            <a class = "btn btn-light" href = "https://www.github.com/TerminaGame/Press">Fork on GitHub</a>
+        {% if page.permalink == "/mac/" %}
+            <a class = "btn btn-light" href = "https://www.github.com/TerminaGame/mac">Fork mac on GitHub</a>
+        {% elsif page.permalink == "/press/" %}
+            <a class = "btn btn-light" href = "https://www.github.com/TerminaGame/Press">Fork Press on GitHub</a>
         {% else %}
-            <a class = "btn btn-light" href = "https://www.github.com/TerminaGame/">View on GitHub</a>
+            <a class = "btn btn-light" href = "https://www.github.com/TerminaGame/">View GitHub Profile</a>
         {% endif %}
     </span>
   </div>

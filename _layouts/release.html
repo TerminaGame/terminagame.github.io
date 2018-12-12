@@ -30,11 +30,11 @@
                     </div>
                     <div class = "col-3">
                         {% if page.product == "base" %}
-                            <img src = "{{ site.baseurl }}/assets/base.png" width="100%"/>
-                        {% else if page.product == "ios" %}
-                            <img src = "{{ site.baseurl }}/assets/termios.png" width="100%"/>
-                        {% else if page.product == "mac" %}
-                            <img src = "{{ site.baseurl }}/assets/termmac.png" width="100%"/>   
+                            <img src = "{{ site.baseurl }}/assets/icons/base.png" width="100%"/>
+                        {% elsif page.product == "ios" %}
+                            <img src = "{{ site.baseurl }}/assets/icons/termios.png" width="100%"/>
+                        {% elsif page.product == "mac" %}
+                            <img src = "{{ site.baseurl }}/assets/icons/termmac.png" width="100%"/>   
                         {% endif %}
                     </div>
                 </div>
@@ -62,14 +62,14 @@
                             <p>To install this product, copy the <code>termina</code> binary to where you can execute Unix binaries (usually <code>/usr/bin/</code> or <code>/usr/local/bin/</code>). Alternatively, you can copy this to a local folder in your Home directory and <a href="http://osxdaily.com/2014/08/14/add-new-path-to-path-command-line/">export the PATH in your Bash profile</a>.</p>
                         </div>
                     </p>
-                {% else if page.product == "ios" %}
+                {% elsif page.product == "ios" %}
                     <p>
                         <div class="alert alert-primary" role="alert">
                             <h4 class = "alert-heading">Installation instructions</h4>
                             <p>To install this product, install Termina for iOS from the App Store.</p>
                         </div>
                     </p>
-                {% else if page.product == "mac" %}
+                {% elsif page.product == "mac" %}
                     <p>
                         <div class="alert alert-primary" role="alert">
                             <h4 class = "alert-heading">Installation instructions</h4>
